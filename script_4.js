@@ -23,16 +23,23 @@ const entrepreneurs = [
 
 console.log("La liste des entrepreneurs qui sont nés dans les années 70  :")
 console.log("**********Parcourons le array :")
-for(let index in entrepreneurs) {
-  console.log(entrepreneurs[index]);
-}
-
-
-
-
-
+let result = entrepreneurs.filter(vieux => (vieux.year >= 1970 && vieux.year < 1980));
+  console.log(result);
 
 
 console.log("array qui contient le prénom et le nom des entrepreneurs :")
+let identite = [];
+for (let index in entrepreneurs) {
+  identite.push(entrepreneurs[index].first + " " + entrepreneurs[index].last);
+}
+console.log(identite)
+
+
 console.log("L'âge des inventeurs aujourd'hui : ")
-console.log("Entrepreneurs (par ordre alphabétique): ")
+for (let index in entrepreneurs) {
+  console.log(2019-entrepreneurs[index].year);
+  }
+
+
+console.log("Entrepreneurs (par ordre alphabétique): ");
+console.log(entrepreneurs.sort((a,b) => (a.last > b.last) ? 1 : ((b.last > a.last) ? -1 : 0)));
